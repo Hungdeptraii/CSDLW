@@ -1,14 +1,30 @@
-.div1 {
-    border: 5px outset red;
-    background-color: lightblue;
-    text-align: center;
-    color: blue; /* Đổi màu chữ thành màu xanh */
-    font-size: 16px; /* Đặt kích thước phông chữ thành 16 pixel */
-margin: 10px;/* Đặt lề cho phần tử */
- margin: 0 auto; /* Đặt lề trái và phải tự động để nó nằm giữa */
-padding: 5px; /* Đặt lề bên trong cho phần tử */
-opacity: 0.7; /* Đặt độ trong suốt của phần tử */
-box-shadow: 5px 5px 5px gray; /* Thêm đổ bóng với tô đen */
-/*display: block;*/ /* Hiển thị phần tử như một khối hộp */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  height: 100vh; /* Chiều cao 100% của màn hình */
+  margin: 0; /* Loại bỏ khoảng trống mặc định của body */
+  text-align: center; /* Căn giữa text trong toàn bộ body */
+}
 
-  }
+.container {
+  display: flex; /* Sắp xếp các mục theo hàng ngang */
+  justify-content: center; /* Căn giữa các mục trong container */
+  align-items: center; /* Căn giữa các mục theo chiều dọc */
+}
+
+.item {
+  text-align: center; /* Căn giữa text dưới ảnh */
+  font-size: 24px; /* Đặt kích thước font chữ */
+  margin-right: 30px; /* Khoảng cách giữa các mục */
+}
+
+.item:last-child {
+  margin-right: 0; /* Không cần khoảng cách phải cho mục cuối */
+}
+
+.item img {
+  width: auto; /* Đặt chiều rộng tự động */
+  height: 100px; /* Chiều cao cố định cho ảnh */
+}
