@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Thiết kế layout</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến kích thước */
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #header, #nav, #article, #aside, #footer {
+            border: 2px solid #FFF; /* Viền khuôn cho các khối */
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Bóng tạo hiệu ứng lồi */
+            margin-bottom: 10px;
+        }
+        #wrapper {
+            width: 100%; /* Tràn toàn bộ chiều ngang của trang */
+            margin: auto;
+            color: #FFF;
+        }
+        #header {
+            width: 100%; /* Tràn chiều rộng */
+            height: 200px;
+            background-color: orange;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+        }
+        #nav {
+            width: 100%; /* Tràn chiều rộng */
+            height: 50px;
+            background-color: green;
+            text-align: center;
+            line-height: 50px;
+        }
+        #main {
+            display: flex; /* Sử dụng flexbox để căn các khối con */
+        }
+        #article     {
+            width: 75%; /* Chiếm 50% chiều rộng */
+            height: 400px;
+            background-color: yellow;
+            text-align: center;
+            line-height: 400px;
+        }
+        #aside {
+            width: 25%; /* Chiếm 25% chiều rộng */
+            height: 400px;
+            background-color: red;
+            text-align: center;
+            line-height: 400px;
+        }
+        #footer {
+            width: 100%; /* Tràn chiều rộng */
+            height: 125px;
+            background-color: #669;
+            text-align: center;
+            line-height: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">Header</div>
+        <div id="nav">Nav</div>
+        <div id="main">
+            <div id="article">article</div>
+            <div id="aside">Aside</div>
+        </div>
+        <div id="footer">Footer</div>
+    </div>
+</body>
+</html>
