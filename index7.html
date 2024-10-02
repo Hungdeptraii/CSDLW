@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout5</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+        height: 100%;
+    }
+    header {
+        display: flex;
+        background-color: aqua;
+        height: 15vh;
+    }
+    #logo {
+        flex: 1;
+        background-color: black;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    #banner {
+        flex: 4;
+        background-color: aquamarine;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #header-link {
+        background-color: gray;
+        text-align: center;
+        padding: 10px;
+        color: white;
+    }
+    #container {
+        display: flex;
+        height: 70vh;
+    }
+    #left, #right {
+        width: 15%;
+        background-color: blueviolet;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    #content {
+        flex: 1;
+        background-color: bisque;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    footer {
+        background-color: red;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+    <header>
+        <div id="logo">Logo</div>
+        <div id="banner">Banner</div>
+    </header>
+    <nav id="header-link">Header Link</nav>
+    <div id="container">
+        <aside id="left">Left</aside>
+        <main id="content">Content</main>
+        <aside id="right">Right</aside>
+    </div>
+    <footer>Footer</footer>
+</body>
+</html>
