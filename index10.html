@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Thiết kế layout</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header{
+            background-color: orange;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            color: black;
+        }
+        .aside1{
+            background-color: yellow;
+            width: 20%;
+            float: left;
+            height: calc(100vh - 120px);
+            text-align:center;
+            padding-top: 20px;
+            font-size: 18px;
+            color: black;
+        }
+        .aside2{
+            background-color: magenta;
+            width: 20%;
+            float: right;
+            height: calc(100vh - 120px);
+            text-align: center;
+            padding-top: 20px;
+            font-size: 18px;
+            color: black;
+        }
+        .main{
+            background-color: skyblue;
+            width: 60%;
+            float: left;
+            height: calc(100vh -120px);
+            text-align: center;
+            padding-top: 438px;
+            font-size: 18px;
+            color: black;
+        }
+        .footer{
+            background-color: lightgreen;
+            text-align: center;
+            padding : 20px;
+            font-size: 24px;
+            color: black;
+            clear: both;
+               }
+    </style>
+    <body>
+        <div class="header">Header</div>
+        <div class="aside1">Aside 1</div>
+        <div class="main"></div>
+        <div class="aside2">Aside 2</div>
+        <div class="footer">Footer</div>
+    </body>
