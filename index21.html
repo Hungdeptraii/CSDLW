@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AI Solutions - Innovative solutions for AI technology and research."/>
+  <title>AI Solutions</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  
+  
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 50px;
+        }
+        .nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between; /* Tạo khoảng cách đều giữa các mục */
+    width: 600px; /* Đặt chiều rộng cụ thể để tách đều ra */
+}
+
+.nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px; /* Tăng khoảng cách giữa các mục */
+    font-size: 18px; /* Tăng kích thước chữ để dễ nhìn hơn */
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #007bff; /* Màu khi di chuột qua */
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white; /* Default background color */
+    color: black; /* Default text color */
+    text-decoration: none;
+    position: relative;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px; /* Submenu width */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change background color of main menu when hover over the parent or submenu */
+.dropdown:hover a {
+    background-color: white; 
+    color: black;
+}
+
+/* Change background color of the main menu when hovering over the parent, without affecting the submenu */
+.dropdown:hover > a {
+    background-color: red; /* Hover color for the main dropdown link */
+    color: black; /* Text color for the main dropdown link */
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style for dropdown links */
+/* Add a downward arrow next to the main dropdown link */
+.dropdown > a::after {
+    content: "\f078"; /* Font Awesome 'chevron-down' icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding-left: 10px; /* Space between text and arrow */
+    transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow when hovering over the parent link */
+.dropdown:hover > a::after {
+    transform: rotate(180deg); /* Rotate the arrow upwards on hover */
+}
+
+/* Ensure no arrows in dropdown-content */
+.dropdown-content a::after {
+    content: none;
+}
+
+
+
+
+        .search-container {
+            position: relative;
+        }
+        .search-container input {
+            padding: 5px 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-container i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #333;
+        }
+        .banner {
+            background: url('https://storage.googleapis.com/a1aa/image/DPMivA9YPKrwFBF1q1gwtdQs0SpW6hb1fGtUSAteNE8PLlpTA.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .banner h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        .banner button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .banner button:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .card-button {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .contact {
+            padding: 20px;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+        .contact h2 {
+            margin-top: 0;
+        }
+        .contact p {
+            margin: 10px 0;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .footer p {
+            margin: 0;
+        }
+        .footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <img alt="Company Logo" src="https://storage.googleapis.com/a1aa/image/DPMivA9YPKrwFBF1q1gwtdQs0SpW6hb1fGtUSAteNE8PLlpTA.jpg"/>
+   <div class="nav">
+    <!-- Dropdown Menu for Home -->
+    <div class="dropdown">
+      <a href="#"><strong>About</strong></a>
+      <div class="dropdown-content">
+        <a href="#"><strong>Our Story</strong></a>
+        <a href="#"><strong>Our Team</strong></a>
+      </div>
+    </div>
+    
+    <!-- Dropdown Menu for Services -->
+    <div class="dropdown">
+      <a href="#"><strong>Solution</strong></a>
+      <div class="dropdown-content">
+        <a href="#"><strong>AI Platform</strong></a>
+        <a href="#"><strong>Dermatology</strong></a>
+        <a href="#"><strong>Incubator</strong></a>
+        <a href="#"><strong>Signal Processing</strong></a>
+
+      </div>
+    </div>
+    
+    <!-- Dropdown Menu for About -->
+    <div class="dropdown">
+      <a href="#"><strong>R&D</strong></a>
+      <div class="dropdown-content">
+       <a href="#"><strong>Seminars</strong></a>
+       <a href="#"><strong>Publications</strong></a>
+      </div>
+    </div>
+    
+    <!-- Dropdown Menu for Contact -->
+    <div class="dropdown">
+      <a href="#"><strong>News</strong></a>
+      <div class="dropdown-content">
+        <a href="#"><strong>Latest New</strong></a>
+        <a href="#"><strong>AI Blog</strong></a>
+      </div>
+    </div>
+    <a href="#"><strong>Careers</strong></a>
+    <a href="#"><strong>Contact</strong></a>
+   </div>
+   <div class="search-container">
+    <input placeholder="Search..." type="text"/>
+    <i class="fas fa-search"></i>
+   </div>
+  </div>
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <div>
+      <h1>Welcome to AI Solutions</h1>
+      <button>Learn More</button>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <div class="grid-container">
+     <div class="card">
+      <img alt="Torus Adaptive Filters" src="https://storage.googleapis.com/a1aa/image/K4DrbgNALVbUPlWA3ihYp8rGxom69SZBeYoWlbE1JfhLLlpTA.jpg"/>
+      <div class="card-title">Torus Adaptive Filters</div>
+      <button class="card-button"><i class="fas fa-arrow-right"></i></button>
+     </div>
+     <div class="card">
+      <img alt="AI Platform" src="https://storage.googleapis.com/a1aa/image/AelcNTyuGg2OA6mGEj3r0ewdynGT7yn9j8qKCjOBlHAMLlpTA.jpg"/>
+      <div class="card-title">AI Platform</div>
+      <button class="card-button"><i class="fas fa-arrow-right"></i></button>
+     </div>
+     <div class="card">
+      <img alt="Dynamic Neural Networks" src="ai2.jpg"/>
+      <div class="card-title">Dynamic Neural Networks</div>
+      <button class="card-button"><i class="fas fa-arrow-right"></i></button>
+     </div>
+     <div class="card">
+      <img alt="Neural Networks Application" src="AI.jpg"/>
+      <div class="card-title">Neural Networks Application</div>
+      <button class="card-button"><i class="fas fa-arrow-right"></i></button>
+     </div>
+    </div>
+ </div>
+ 
+
+  <!-- Contact Section -->
+  <div class="contact">
+   <h2>Contact Us</h2>
+   <p>123 AI Lane, Innovation City, Techland</p>
+   <p>Email: info@aisolutions.com</p>
+   <p>Phone: +1 234 567 890</p>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+   <p>© 2024 AI Solutions. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  </div>
+ </body>
+</html>
