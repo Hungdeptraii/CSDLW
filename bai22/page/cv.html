@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Lý lịch nghề nghiệp</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="/bai22/css/style.css">
+    <style>
+        .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+        /* Parallax background */
+        .parallax-section {
+            background-image: url('/bai22/images/background.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: black;
+            text-align: center;
+            transition: background-color 0.5s;
+}
+        .gioithieu {
+    background-color: gray;
+    height: 100vh; /* This sets the height to 100% of the viewport */
+}
+
+        /* Transform effect for section */
+        .parallax-section:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Section styling */
+.section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.section:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Personal information hover effect */
+#personal-info p:hover {
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Skills progress bar */
+#skills ul li {
+    position: relative;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    background-color: gray;
+    border-radius: 5px;
+    overflow: hidden;
+    list-style: none;
+}
+
+#skills ul li::before {
+    content: attr(data-level)'%' ; /* Display the skill level percentage */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0; /* Initial width (transitioned to actual level below) */
+    background-color: pink;
+    color: red;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+    transition: width 0.5s ease;
+}
+
+#skills ul li:hover::before {
+    width: 90%; /* Expand on hover */
+}
+
+#experienceList{
+    padding: 10px;
+    background-color: gray;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+}
+/* Education list hover effect */
+#education ul li {
+    padding: 10px;
+    background-color: gray;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#education ul li:hover {
+    background-color: gray;
+}
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    transition: background-color 0.5s;
+}
+
+.footer:hover {
+    background-color: #007bff;
+}
+
+.footer a {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ffc107;
+}
+button {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: violet;
+}
+
+
+        
+    </style>
+</head>
+<body class="d-flex flex-column">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img src="/bai22/images/cmc2.jpg" alt="Logo" width="100" height="100" class="d-inline-block align-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/bai22/page/index.html">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="/bai22/page/blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="/bai22/page/cv.html">CV</a></li>
+                <li class="nav-item"><a class="nav-link" href="/bai22/page/products.html">Sản phẩm</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="gioithieu">
+            <div class="parallax-section">
+                <h1>Xin chào, tôi là Trần Ngọc Hùng</h1>
+                <p>Lập trình viên web với kinh nghiệm xây dựng các dự án responsive và tối ưu hóa SEO</p>
+            </div>
+    
+            <!-- Thông tin Cá nhân -->
+            <section class="container mt-5 section fade-in" id="personal-info">
+                <h2>Thông tin Cá nhân</h2>
+                <p id="personalDetails">Địa chỉ: Hà Nội, Việt Nam</p>
+                <button onclick="editInfo('personalDetails')">Sửa</button>
+            </section>
+    
+            <!-- Kinh nghiệm làm việc -->
+            <section class="container mt-5 section fade-in" id="experience">
+                <h2>Kinh nghiệm làm việc</h2>
+                <ul id="experienceList">
+                    <li>Front-End Developer tại Công ty XYZ (2020 - Nay) <button onclick="deleteItem(this)">Xóa</button></li>
+                    <li>Thực tập sinh tại Công ty ABC (2019 - 2020) <button onclick="deleteItem(this)">Xóa</button></li>
+                </ul>
+                <button onclick="addItem('experienceList')">Thêm Kinh Nghiệm</button>
+            </section>
+    
+            <!-- Học vấn -->
+            <section class="container mt-5 section fade-in" id="education">
+                <h2>Học vấn</h2>
+                <ul id="educationList">
+                    <li>Đại học CMC - Khoa Công Nghệ Thông Tin và Truyền Thông (2023 - 2026) <button onclick="deleteItem(this)">Xóa</button></li>
+                </ul>
+                <button onclick="addItem('educationList')">Thêm Học Vấn</button>
+            </section>
+    
+            <section class="container mt-5 section fade-in" id="skills">
+                <h2>Kỹ năng</h2>
+                <ul id="skillsList">
+                    <li data-level="80">HTML, CSS, JavaScript <button onclick="deleteItem(this)">Xóa</button></li>
+                    <li data-level="60">React, Vue <button onclick="deleteItem(this)">Xóa</button></li>
+                </ul>
+                <button onclick="addItem('skillsList')">Thêm Kỹ Năng</button>
+            </section>
+        </div>
+    </div>
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Liên hệ</h5>
+                    <p>Email: info@shop.com</p>
+                    <p>Số điện thoại: 0123 456 789</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Theo dõi chúng tôi</h5>
+                    <a href="#" class="ml-2"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#" class="ml-2"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+                
+            </div>
+        </div>
+    </footer>   
+
+    <!-- Firebase App and Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+    <script>
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+        // Fetching data from Firebase and displaying it
+        function fetchData() {
+            // Fetch personal information
+            db.collection("cv").doc("personalInfo").get().then((doc) => {
+                if (doc.exists) {
+                    document.getElementById("personalDetails").innerText = doc.data().details;
+                }
+            });
+
+            // Fetch experience
+            db.collection("cv").doc("experience").collection("items").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    let li = document.createElement("li");
+                    li.innerText = doc.data().title + " - " + doc.data().duration;
+                    document.getElementById("experienceList").appendChild(li);
+                });
+            });
+
+            // Fetch education
+            db.collection("cv").doc("education").collection("items").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    let li = document.createElement("li");
+                    li.innerText = doc.data().degree + " at " + doc.data().institution;
+                    document.getElementById("educationList").appendChild(li);
+                });
+            });
+
+            // Fetch skills
+            db.collection("cv").doc("skills").collection("items").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    let li = document.createElement("li");
+                    li.innerText = doc.data().name;
+                    document.getElementById("skillsList").appendChild(li);
+                });
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchData);
+
+        // Function to edit personal information
+function editInfo(elementId) {
+    const element = document.getElementById(elementId);
+    const currentText = element.innerText;
+    const newText = prompt("Nhập nội dung mới:", currentText);
+    if (newText !== null && newText.trim() !== "") {
+        element.innerText = newText;
+    }
+}
+
+// Function to add new item to a list (experience, education, skills)
+function addItem(listId) {
+    const list = document.getElementById(listId);
+    const newItemText = prompt("Nhập nội dung mới:");
+    if (newItemText !== null && newItemText.trim() !== "") {
+        const newItem = document.createElement("li");
+        newItem.innerHTML = `${newItemText} <button onclick="deleteItem(this)">Xóa</button>`;
+        list.appendChild(newItem);
+    }
+}
+
+// Function to delete an item from a list
+function deleteItem(button) {
+    const item = button.parentElement;
+    item.remove();
+}
+
+    </script>
+</body>
+</html>

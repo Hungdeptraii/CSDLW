@@ -1,0 +1,117 @@
+/* CSS cho footer luôn ở cuối trang */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+/* Hover and Animation */
+.navbar-brand, .nav-link {
+    transition: transform 0.3s;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+}
+
+/* Main content layout */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Căn đều các mục trong navbar */
+.navbar-nav .nav-item {
+    margin-left: 100px; /
+}
+
+.navbar-nav {
+    justify-content: center; 
+}
+
+.navbar-brand {
+    margin-right: 30px; 
+}
+
+
+/* Chỉnh màu cho thanh navbar */
+.navbar {
+    background-color: #343a40; /* Màu nền của navbar */
+}
+
+.navbar .navbar-brand {
+    color: #ffffff; /* Màu logo hoặc tên thương hiệu */
+}
+
+.navbar .navbar-brand:hover {
+    color: #ffcc00; /* Màu khi hover vào logo */
+}
+
+/* Màu các mục menu */
+.navbar .nav-link {
+    color: #ffffff; /* Màu mặc định của các mục menu */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+}
+
+.navbar .nav-link:hover {
+    color: #ff5733; 
+}
+
+/* Chỉnh màu cho nút toggler */
+.navbar-toggler {
+    border-color: #ffffff; /* Màu viền của nút toggler */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; /* Màu của biểu tượng toggler */
+}
+
+.nav-item {
+    border-radius: 10px; /* Bo tròn mặc định */
+    transition: background-color 0.3s ease, border-radius 0.3s ease; /* Hiệu ứng mượt */
+}
+
+.nav-item:hover {
+    background-color: white; /* Thay đổi màu nền khi hover */
+    border-radius: 15px; /* Bo tròn hơn khi hover */
+}
+
+.main-content {
+    background-color: gray; /* Dark background color */
+    min-height: calc(100vh - 100px); /* 100px to leave space for the footer */
+    color: black; /* Ensures text is visible on dark background */
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.row1 h1, .row1 p {
+    text-align: center;
+    color: black; /* White text color */
+}
